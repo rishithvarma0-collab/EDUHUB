@@ -14,7 +14,7 @@ from flask import (
 from flask_login import login_required, current_user
 from sqlalchemy import func
 
-from .models import db, Student, Course, Enrollment, University
+from models import db, Student, Course, Enrollment, University
 
 
 student = Blueprint("student", __name__, url_prefix="/student")

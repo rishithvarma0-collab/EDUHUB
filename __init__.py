@@ -1,6 +1,6 @@
 from flask import Flask
 from flask_login import LoginManager
-from .models import db, User
+from models import db, User
 
 
 def create_app():
@@ -39,27 +39,27 @@ def create_app():
         return User.query.get(int(user_id))
 
     # --- Blueprints ---
-    from .auth import auth as auth_blueprint
+    from auth import auth as auth_blueprint
 
     app.register_blueprint(auth_blueprint)
 
-    from .main import main as main_blueprint
+    from main import main as main_blueprint
 
     app.register_blueprint(main_blueprint)
 
-    from .admin import admin as admin_blueprint
+    from admin import admin as admin_blueprint
 
     app.register_blueprint(admin_blueprint)
 
-    from .student import student as student_blueprint
+    from student import student as student_blueprint
 
     app.register_blueprint(student_blueprint)
 
-    from .instructor import instructor as instructor_blueprint
+    from instructor import instructor as instructor_blueprint
 
     app.register_blueprint(instructor_blueprint)
 
-    from .analyst import analyst as analyst_blueprint
+    from analyst import analyst as analyst_blueprint
 
     app.register_blueprint(analyst_blueprint)
 

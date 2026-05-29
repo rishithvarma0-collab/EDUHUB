@@ -2,7 +2,7 @@ from flask import Blueprint, render_template, abort
 from flask_login import login_required, current_user
 from sqlalchemy import func
 
-from .models import (
+from models import (
     db,
     Course,
     University,
